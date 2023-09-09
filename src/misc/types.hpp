@@ -21,7 +21,7 @@ enum FileFlags : uint32_t {
 
 #pragma pack(push, 1)
 struct CryptImgHeader {
-    uint32_t ñheck; // Constant value 1703, after decryption it should have value 1703. To check if
+    uint32_t check; // Constant value 1703, after decryption it should have value 1703. To check if
                     // decryption worked properly.
     uint32_t number_of_entries;
     uint32_t flags;

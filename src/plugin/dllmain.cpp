@@ -1,4 +1,4 @@
-﻿/*****************************************************************************
+/*****************************************************************************
  *
  *  PROJECT:        RIMG
  *  LICENSE:        See LICENSE in the top level directory
@@ -15,7 +15,7 @@
 
 #include "Plugin.hpp"
 
-BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReasonForCall, LPVOID lpReserved) {
+BOOL WINAPI DllMain(HMODULE hModule, DWORD dwReasonForCall, LPVOID lpReserved) {
     static Plugin* plugin;
 
     switch (dwReasonForCall) {

@@ -71,7 +71,7 @@ int main(int argc, char* argv[]) {
     input_file.read(reinterpret_cast<char*>(&entry_count), sizeof(entry_count));
 
     CryptImgHeader crypt_header    = {0};
-    crypt_header.ñheck             = 1703;
+    crypt_header.check             = 1703;
     crypt_header.number_of_entries = 0;
     crypt_header.number_of_entries = entry_count;
 
@@ -147,7 +147,7 @@ int main(int argc, char* argv[]) {
         uint8_t*       pFileBuff = file_buffer + metadata_size + sizeof(meta_info);
         struct AES_ctx fle_ctx;
         AES_init_ctx(&fle_ctx, fle_key);
-        for (int32_t i = 0; i < (file_size / AES_BLOCKLEN); i++) {
+        for (uint32_t i = 0; i < (file_size / AES_BLOCKLEN); i++) {
             AES_ECB_encrypt(&fle_ctx, pFileBuff + (i * AES_BLOCKLEN));
         }
         output_file.write(reinterpret_cast<char*>(pFileBuff), file_size);

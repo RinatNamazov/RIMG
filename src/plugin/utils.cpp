@@ -13,10 +13,10 @@
 
 #include <Windows.h>
 
-void redirect_code(uintptr_t address, void* to_address, bool is_ñall) {
+void redirect_code(uintptr_t address, void* to_address, bool is_call) {
     DWORD old_vp;
     VirtualProtect(reinterpret_cast<void*>(address), 5, PAGE_EXECUTE_READWRITE, &old_vp);
-    *reinterpret_cast<BYTE*>(address)      = is_ñall ? 0xE8 /* call */ : 0xE9 /* jmp */;
+    *reinterpret_cast<BYTE*>(address)      = is_call ? 0xE8 /* call */ : 0xE9 /* jmp */;
     *reinterpret_cast<DWORD*>(address + 1) = reinterpret_cast<DWORD>(to_address) - address - 5;
     VirtualProtect(reinterpret_cast<void*>(address), 5, old_vp, &old_vp);
 }

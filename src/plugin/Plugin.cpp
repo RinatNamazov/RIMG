@@ -38,7 +38,7 @@ uint32_t __stdcall patch_CStreaming__LoadCdDirectory_5B61B0_2(FILE* f, char* a) 
             AES_CBC_decrypt_buffer(&hdr_ctx, reinterpret_cast<uint8_t*>(&crypt_header),
                                    sizeof(crypt_header));
 
-            if (crypt_header.ñheck == 1703) {
+            if (crypt_header.check == 1703) {
                 is_encrypted_img = true;
                 return crypt_header.number_of_entries;
             } else {

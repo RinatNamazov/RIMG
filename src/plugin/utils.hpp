@@ -13,7 +13,7 @@
 
 #include <cstdint>
 
-void redirect_code(uintptr_t address, void* to_address, bool is_ñall = false);
+void redirect_code(uintptr_t address, void* to_address, bool is_call = false);
 void patch_set_nop(uintptr_t address, size_t size);
 void patch_byte(uintptr_t address, uint8_t value);
 void patch_pointer(uintptr_t address, uintptr_t value);
