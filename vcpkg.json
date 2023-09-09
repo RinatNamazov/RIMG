@@ -1,0 +1,9 @@
+{
+  "name": "rimg",
+  "version-string": "1.0.0",
+  "description": "Encrypted IMG archives for GTA:SA",
+  "homepage": "https://github.com/RinatNamazov/RIMG",
+  "dependencies": [
+    "tiny-aes-c"
+  ]
+}
